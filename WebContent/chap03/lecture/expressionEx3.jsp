@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+</style>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,69 +15,33 @@
 </head>
 <body>
 <%
-for (int i = 0; i < 5; i++) {
- %>
-	
-	<h1>Lorem ipsum dolor.</h1>
-	
-<%
+java.util.Set<Integer> lotto = new java.util.HashSet<>();
+
+while(lotto.size() < 6) {
+	int rand = (int) (Math.random() * 45 + 1);
+	lotto.add(rand);
+
 }
-%>
 
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
 %>
-
 <ul>
-<%
-for (String item : list) {
+
+
+<% 
+for (int lot : lotto) {
 %>
-<li>
-<% out.print(item); %>
-</li>
+	<li style="font-size: 50px"><%= lot %></li>
+
 <%
 }
 %>
 </ul>
 
+<hr />
 <%
-boolean danger = true;
-%>
-<%
-if (danger) {
-%>
-<h1 class="text-danger">DANGER!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">INFO~~!!</h1>
-<%
+for (int lot : lotto) {
+	out.print("<ul>" + "<li>" + lot + "</li>" + "</ul>");
 }
 %>
-
-<hr />
-*
-**
-***
-****
-*****
-<hr />
-
-<%
-for (int i = 0; i < 5; i++) {
-	for (int j = 0; j <= i; j++) {
-%>
-	#
-<%
-	}
-%>
-	<br>
-<%
-}
-%>	
 </body>
 </html>
