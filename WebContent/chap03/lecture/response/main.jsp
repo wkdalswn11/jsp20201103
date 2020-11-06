@@ -2,6 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	boolean login = id.equals("seoul") && pw.equals("123");
+	
+	if(!login) {
+		response.sendRedirect("loginForm.jsp");
+	} else {
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,19 +24,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
-%>
+<h1>main contents</h1>
 
-<jsp:forward page="<%= viewPageURL %>"/>
 </body>
 </html>
+
+<%
+}
+%>

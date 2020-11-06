@@ -13,19 +13,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<h1>main jsp</h1>
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
+Object o = new Object();
+System.out.println(o.hashCode());
+
+request.setAttribute("obj", o);
 %>
 
-<jsp:forward page="<%= viewPageURL %>"/>
+
+<jsp:forward page="subEx1.jsp">
+	<jsp:param value="newVal" name="newParam"/>
+</jsp:forward>
+
 </body>
 </html>

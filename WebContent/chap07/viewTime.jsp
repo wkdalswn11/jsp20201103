@@ -14,18 +14,16 @@
 </head>
 <body>
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
+	if ( request.getAttribute("time") instanceof Calendar) {
+	Calendar cal = (Calendar) request.getAttribute("time");
 	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
 %>
 
-<jsp:forward page="<%= viewPageURL %>"/>
+<b style="font-size: 30px;">현재 시간은 <%= cal.get(Calendar.HOUR) %> 시
+										<%= cal.get(Calendar.MINUTE) %> 분
+										<%= cal.get(Calendar.SECOND) %> 초 입니다 </b>
+<%
+	}
+%>
 </body>
 </html>

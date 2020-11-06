@@ -2,6 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	String id = request.getParameter("memberId");
+	if (id != null && id.equals("madvirus")) {
+		//response.sendRedirect("index.jsp");
+		response.sendRedirect(request.getContextPath() + "/chap03/index.jsp");
+	} else {
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,21 +19,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+
 </head>
 <body>
+잘못된 아이디입니다.
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
 	}
 %>
-
-<jsp:forward page="<%= viewPageURL %>"/>
 </body>
 </html>

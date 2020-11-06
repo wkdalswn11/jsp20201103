@@ -14,18 +14,25 @@
 </head>
 <body>
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
+Object o = request.getAttribute("cartList");
+List<String> list = new ArrayList<>();
+if ( o != null && o instanceof List<?>) {
+	list = (List<String>) o; 
+
 %>
 
-<jsp:forward page="<%= viewPageURL %>"/>
+<h1>cart list</h1>
+<ul>
+<%
+for ( String item : list) {
+%>	
+<li><%=item %></li>
+
+<% 
+	}
+}
+%>
+
+</ul>
 </body>
 </html>

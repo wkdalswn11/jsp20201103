@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="chap07.User" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -14,18 +15,17 @@
 </head>
 <body>
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
+Object o = request.getAttribute("user");
+if (o != null && request.getAttribute("user") instanceof User) {
+User u = (User) request.getAttribute("user");
+
 %>
 
-<jsp:forward page="<%= viewPageURL %>"/>
+이름 : <%= u.getName() %> <br />
+주소 : <%= u.getAddress() %> <br />
+나이 : <%= u.getAge() %> <br />
+<%
+}
+%>
 </body>
 </html>

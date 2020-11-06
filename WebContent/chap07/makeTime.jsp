@@ -14,18 +14,9 @@
 </head>
 <body>
 <%
-	String code = request.getParameter("code");
-	String viewPageURL = null;
-	
-	if(code.equals("A")) {
-		viewPageURL = "viewModule/a.jsp";
-	} else if (code.equals("B")) {
-		viewPageURL = "viewModule/b.jsp";
-	} else if (code.equals("C")) { 
-		viewPageURL = "viewModule/c.jsp";
-	}
+	Calendar cal = Calendar.getInstance();
+	request.setAttribute("time", cal);
 %>
-
-<jsp:forward page="<%= viewPageURL %>"/>
+<jsp:forward page="viewTime.jsp"/>
 </body>
 </html>
