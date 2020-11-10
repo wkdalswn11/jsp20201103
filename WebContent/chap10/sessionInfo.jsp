@@ -27,7 +27,7 @@
 	time.setTime(session.getLastAccessedTime());
 %>
 최근접근시간 : <%= formatter.format(time) %> <br>
-세션유지시간 : <%= %>
+세션유지시간: <%= session.getMaxInactiveInterval() %>
 
 </body>
 </html>

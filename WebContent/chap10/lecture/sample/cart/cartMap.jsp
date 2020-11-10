@@ -17,7 +17,7 @@
 <h1>장바구니 보기 (map)</h1>
 <ul>
 <%
-Map<String, Integer> cart = (Map<String, Integer>) session.getAttribute("a");
+Map<String, Integer> cart = (Map<String, Integer>) session.getAttribute("cartMap");
 
 if (cart != null && cart.size() > 0) {
   // loop

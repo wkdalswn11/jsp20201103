@@ -1,28 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="chap09.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-
 <%
-String id = request.getParameter("id");
-String password = request.getParameter("password");
-
-if (id != null & password !=null) {
-	if (id.equals(password)) {
-		session.setAttribute("id" , id);
-	} else {
-		%>
-		 
-		<script>
-		alert("ㅋㅋㅋ 아디비번기억안나냐 ? ㅋ Hint: 앞뒤가 똑같은 전화번호");
-		history.go(-1);
-		</script>  
-	<%		
-	}
+	String id = request.getParameter("id");
+	String pw = request.getParameter("password");
+		
+	if(id.equals(pw)) {
+		// Id와 암호가 같으면 로그인에 성공한 것으로 판단.
+		response.addCookie(Cookies.createCookie("AUTH", id, "/", -1));
 	
-} else {
-	response.sendRedirect("loginForm.jsp");
-}
 %>
 <!DOCTYPE html>
 <html>
@@ -32,10 +20,19 @@ if (id != null & password !=null) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>로그인 성공</title>
 </head>
 <body>
-<h1><%= session.getAttribute("id") %>님 반갑냐? ㅋ</h1>
-<a href="logout.jsp">로그 아웃</a>
+로그인에 성공했습니다
 </body>
 </html>
+<%
+	} else { //로그인실패시
+%>
+<script>
+alert("로그인에 실패하였습니다.");
+history.go(-1);
+</script>
+<%
+}
+%>

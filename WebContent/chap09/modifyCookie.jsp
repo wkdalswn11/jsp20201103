@@ -2,27 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-
+<%@ page import="java.net.*" %>
 <%
-String id = request.getParameter("id");
-String password = request.getParameter("password");
-
-if (id != null & password !=null) {
-	if (id.equals(password)) {
-		session.setAttribute("id" , id);
-	} else {
-		%>
-		 
-		<script>
-		alert("ㅋㅋㅋ 아디비번기억안나냐 ? ㅋ Hint: 앞뒤가 똑같은 전화번호");
-		history.go(-1);
-		</script>  
-	<%		
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null && cookies.length > 0) {
+		for(int i = 0; i < cookies.length; i++) {
+			if(cookies[i].getName().equals("name")) {
+				Cookie cookie = new Cookie("name", URLEncoder.encode("JSP프로그래밍", "utf-8"));
+				response.addCookie(cookie);
+			}
+		}
 	}
-	
-} else {
-	response.sendRedirect("loginForm.jsp");
-}
+
+
 %>
 <!DOCTYPE html>
 <html>
@@ -35,7 +27,6 @@ if (id != null & password !=null) {
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%= session.getAttribute("id") %>님 반갑냐? ㅋ</h1>
-<a href="logout.jsp">로그 아웃</a>
+name 쿠키의 값을 변경합니다.
 </body>
 </html>

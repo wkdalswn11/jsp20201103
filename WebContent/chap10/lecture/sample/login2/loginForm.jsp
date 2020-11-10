@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="main.jsp" method="post">
+id : <input type="text" name="id" /> <br />
+pw : <input type="password" name= "password" /> <br/>
+<input type="submit" value = "로그인" />
+</form>
 </body>
 </html>

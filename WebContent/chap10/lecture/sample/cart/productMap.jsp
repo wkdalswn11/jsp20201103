@@ -18,11 +18,11 @@ String food = request.getParameter("food");
 
 Map<String, Integer> map = new HashMap<>();
 
-Object o = session.getAttribute("a");
+Object o = session.getAttribute("cartMap");
 if (o != null) {
   map = (Map<String, Integer>) o; 
 }
-session.setAttribute("a", map);
+session.setAttribute("cartMap", map);
 if (food != null) {
 if (map.containsKey(food)) {
   map.put(food, map.get(food) + 1);

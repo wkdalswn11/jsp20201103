@@ -2,28 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-
-<%
-String id = request.getParameter("id");
-String password = request.getParameter("password");
-
-if (id != null & password !=null) {
-	if (id.equals(password)) {
-		session.setAttribute("id" , id);
-	} else {
-		%>
-		 
-		<script>
-		alert("ㅋㅋㅋ 아디비번기억안나냐 ? ㅋ Hint: 앞뒤가 똑같은 전화번호");
-		history.go(-1);
-		</script>  
-	<%		
-	}
-	
-} else {
-	response.sendRedirect("loginForm.jsp");
-}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +13,15 @@ if (id != null & password !=null) {
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%= session.getAttribute("id") %>님 반갑냐? ㅋ</h1>
-<a href="logout.jsp">로그 아웃</a>
+<%
+Cookie[] cookies = request.getCookies();
+
+for (Cookie cookie : cookies) {
+%>
+ <%= cookie.getName() %> = <%= cookie.getValue() %>
+ <br />
+<%
+}
+%>
 </body>
 </html>
