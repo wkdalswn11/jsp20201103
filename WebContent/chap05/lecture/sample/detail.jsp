@@ -25,6 +25,10 @@
 <body>
 제목 : <input type="text" value="<%= post.getTitle() %>" readonly />
 <br />
+<form action="del.jsp">
+<input type="number"  name = "id" value ="<%= num %>" hidden />
+<input type="submit" value = "삭제" /> 
+</form>
 <textarea cols="30" rows="10" readonly><%= post.getBody() %></textarea>
 <br />
 <a href="post.jsp">게시글 작성</a>
