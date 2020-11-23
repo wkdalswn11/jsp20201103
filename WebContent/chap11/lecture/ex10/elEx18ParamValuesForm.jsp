@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
- request.setAttribute("name", "장민주");
-%>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,12 +13,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-요청URL : ${pageContext.request.requestURL } <br /> <%-- getRequestURL() 메소드가 있기때문에 ${pageContext.request.requestURL을 사용할수있는 것 --%>
-request의 name 속성 : ${requestScope.name } <br />
-code의 파라미터 : ${param.code } <br />
-id의 파라미터 : ${param.id } <br />
-
-<%= request.getParameter("code") %> <br /> 
+<form action="elEx18ParamValuesView.jsp">
+<!-- label*5>input:checkbox[name=food]^br -->
+<label for="">딸기<input type="checkbox" name="food" value="berry"id="" /></label>
+<label for="">바나나<input type="checkbox" name="food" value="banana"id="" /></label>
+<label for="">물<input type="checkbox" name="food" value="water"id="" /></label>
+<label for="">커피<input type="checkbox" name="food" value="coffee"id="" /></label>
+<label for="">케이크<input type="checkbox" name="food" value="cake"id="" /></label>
+<br />
+<input type="submit" value="등록" />
+</form>
 </body>
 </html>
+
+
+
+
+
+
+
+

@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
- request.setAttribute("name", "장민주");
-%>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,12 +13,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-요청URL : ${pageContext.request.requestURL } <br /> <%-- getRequestURL() 메소드가 있기때문에 ${pageContext.request.requestURL을 사용할수있는 것 --%>
-request의 name 속성 : ${requestScope.name } <br />
-code의 파라미터 : ${param.code } <br />
-id의 파라미터 : ${param.id } <br />
-
-<%= request.getParameter("code") %> <br /> 
+<h1>JSTL core 태그들</h1>
+<h3>책 295쪽</h3>
+<%-- 필수 > 2 > 3 > 4 순으로하기 안써져있는건 굳이안해도된다 --%>
+<ul>  
+	<li>set(복습2)</li>	<%-- attribute 관련 --%>
+	<li>remove(복습2)</li> <%-- attribute 관련 --%>
+	<li>if (복습필수)</li>		<%-- 제어문 관련 --%>
+	<li>choose(복습 필수)</li>	<%-- 제어문 관련 --%>
+	<li>forEach(복습 필수)</li><%-- 제어문 관련 --%>
+	<li>forTokens</li>
+	<li>import</li>
+	<li>redirect</li>
+	<li>url(복습4)</li>
+	<li>catch</li>
+	<li>out(복습3)</li>
+</ul>
 </body>
 </html>

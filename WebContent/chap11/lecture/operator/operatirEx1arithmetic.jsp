@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
- request.setAttribute("name", "장민주");
-%>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,12 +13,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+${ 4 + 5 } <br />
+${ 3 - 7 } <br />
+${ 9 * 9 } <br />
+${ 15 / 2 } <br />
+${ 15 div 2 } <br />
+${ 31 % 3 } <br />
+${ 31 mod 3 } <br />
 
-요청URL : ${pageContext.request.requestURL } <br /> <%-- getRequestURL() 메소드가 있기때문에 ${pageContext.request.requestURL을 사용할수있는 것 --%>
-request의 name 속성 : ${requestScope.name } <br />
-code의 파라미터 : ${param.code } <br />
-id의 파라미터 : ${param.id } <br />
+<hr />
 
-<%= request.getParameter("code") %> <br /> 
+${"10" + 5 } <br />
+<%-- 
+${"ten" + 5 } <br />
+--%>
+${abc + 5 } <br />
 </body>
 </html>

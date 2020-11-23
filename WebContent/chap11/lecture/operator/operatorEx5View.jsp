@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
- request.setAttribute("name", "장민주");
-%>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,12 +13,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-요청URL : ${pageContext.request.requestURL } <br /> <%-- getRequestURL() 메소드가 있기때문에 ${pageContext.request.requestURL을 사용할수있는 것 --%>
-request의 name 속성 : ${requestScope.name } <br />
-code의 파라미터 : ${param.code } <br />
-id의 파라미터 : ${param.id } <br />
-
-<%= request.getParameter("code") %> <br /> 
+equal = ${param.param1 eq param.param2 } <br />
+같다 = ${param.param1 == param.param2 } <hr />
+not equal = ${param.param1 ne param.param2 } <br />
+같지않다 = ${param.param1 != param.param2 } <hr />
+lt = ${param.param1 lt param.param2 } <br />
+오른쪽이크다 = ${param.param1 < param.param2 } <hr />
+gt = ${param.param1 gt param.param2 } <br />
+왼쪽이크다 = ${param.param1 > param.param2 } <hr />
+le = ${param.param1 le param.param2 } <br />
+오른쪽이크거나 같다 = ${param.param1 <= param.param2 } <hr />
+ge = ${param.param1 ge param.param2 } <br />
+왼쪽이 크거나같다 = ${param.param1 >= param.param2 } <hr />
 </body>
 </html>
