@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,14 +15,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- ${"a" == "a" }
+<my:ex6pageNation end="3" begin="1"></my:ex6pageNation>
+
 <hr />
-${"a" < "b"  }
-<hr />
-${"11" < "2" }
-<hr />
-${"11" < 2 }
-<hr />
-${"11" > 2 } --%>
+
+<my:ex6pageNation end="10" begin="5"></my:ex6pageNation>
 </body>
 </html>

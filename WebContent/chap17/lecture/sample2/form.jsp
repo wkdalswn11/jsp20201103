@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,14 +15,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- ${"a" == "a" }
-<hr />
-${"a" < "b"  }
-<hr />
-${"11" < "2" }
-<hr />
-${"11" < 2 }
-<hr />
-${"11" > 2 } --%>
+<div class="container">
+	<h1>게시글 작성</h1>
+	<form action="" method="post">
+	제목 : <input type="text" name="title"/> <br />
+	<textarea name="body" id=""  rows="5" cols=""></textarea>
+	<br />
+	<input type="submit" value="등록" />		
+	</form>
+</div>
 </body>
 </html>

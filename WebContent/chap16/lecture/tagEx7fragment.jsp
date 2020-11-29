@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,14 +15,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- ${"a" == "a" }
+<my:ex7fragment>
+	<jsp:attribute name="title">
+		<h1>my title</h1>
+	</jsp:attribute>
+	<jsp:body>
+		<h1>jsp body</h1>
+	</jsp:body>
+</my:ex7fragment>
+
 <hr />
-${"a" < "b"  }
-<hr />
-${"11" < "2" }
-<hr />
-${"11" < 2 }
-<hr />
-${"11" > 2 } --%>
+
+
 </body>
 </html>
