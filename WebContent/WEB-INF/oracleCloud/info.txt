@@ -1,0 +1,8 @@
+sql developer web url
+https://u9aa7lbd1byf6to-mydb501.adb.ap-seoul-1.oraclecloudapps.com/ords/mydb22/_sdw/?nav=worksheet
+
+pw
+adminAdmin12
+
+sample table
+https://git.io/JkhFi
